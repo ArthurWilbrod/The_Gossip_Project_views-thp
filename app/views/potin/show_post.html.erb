@@ -1,0 +1,20 @@
+
+<% id_potin = params[:VIEW].to_i %>
+
+
+
+
+
+<div class="card">
+  <div class="card-header">
+    itre potin : <%= Gossip.find(id_potin).title %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Content : <%= Gossip.find(id_potin).content %></h5>
+    <p class="card-text">Created_at :   <%= Gossip.find(id_potin).created_at %> </p>
+    <a>  <form method="post" action="/potin/author" class="button_to">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <button type="submit" name="author_id" value="<%=Gossip.find(id_potin).user_id%>" class="btn btn-info">Author</button>
+      </form></a>
+  </div>
+</div>

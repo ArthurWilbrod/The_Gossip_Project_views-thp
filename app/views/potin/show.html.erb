@@ -1,0 +1,19 @@
+<p> <% nb= 1 %>
+    <% @gossips.each do |gossip| %>
+      <p>
+          <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title"><%= User.find(gossip.user_id).first_name %><br/></h5>
+              <p class="card-text"><%= gossip.title %><br/></p>
+              <a>        <form method="post" action="/potin" class="button_to">
+                        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                        <button type="submit" name="VIEW" value="<%=nb%>" class="btn btn-info">VIEW</button>
+                      </form></a>
+            </div>
+          </div>
+
+        </p>
+        <% nb= nb+1 %>
+
+      <% end %>
+</p>

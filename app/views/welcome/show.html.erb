@@ -1,0 +1,17 @@
+<h1><div class="alert alert-primary" role="alert">
+  WELCOME
+</div></h1>
+<p>Donne moi ton petit nom : </p>
+
+<form action="welcome" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">Name</label>
+      <input type="text" name="first_name" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+    </div>
+    <div class="col-auto">
+      <button type="submit" name="Envoyer" class="btn btn-primary mb-2">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,17 @@
+
+<% id = params[:author_id] %>
+<p>  </p>
+
+<div class="card text-center">
+  <div class="card-header">
+    Author : <%= User.find(id).first_name %> <%= User.find(id).last_name %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">Description : <%= User.find(id).description %></p>
+    <p class="card-text"><%= User.find(id).email %></p>
+  </div>
+  <div class="card-footer text-muted">
+    age : <%= User.find(id).age %>
+  </div>
+</div>
